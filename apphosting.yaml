@@ -1,0 +1,7 @@
+# apphosting.yaml
+env:
+  - variable: NEXT_PUBLIC_MY_SPECIAL_ENV_VAR
+    value: hey_hello_howdy
+    availability:
+      - BUILD
+      - RUNTIME
