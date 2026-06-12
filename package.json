@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "npm run generate-build-time && next dev",
+    "generate-build-time": "node scripts/generate-build-time.js",
+    "build": "npm run generate-build-time && next build",
     "start": "next start",
     "lint": "next lint"
   },

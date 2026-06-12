@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BUILD_EPOCH, BUILD_DATE_UTC } from "../build-time";
 
 export default function Home() {
   return (
@@ -8,9 +9,16 @@ export default function Home() {
           Get started by editing&nbsp;
           <code className="font-mono font-bold">src/app/page.tsx</code>
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
+        <div className="fixed bottom-0 left-0 flex h-48 w-full flex-col items-center justify-end gap-3 bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:items-end lg:justify-start lg:bg-none p-8 lg:p-0">
+          <div className="flex items-center gap-2 rounded-xl border border-gray-300 bg-gray-200/50 px-3 py-1.5 dark:border-neutral-800 dark:bg-zinc-800/30 backdrop-blur-2xl font-mono text-xs">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-neutral-500 dark:text-neutral-400">Build:</span>
+            <span className="font-bold text-neutral-800 dark:text-neutral-200">{BUILD_EPOCH}</span>
+            <span className="text-neutral-400 dark:text-neutral-500">|</span>
+            <span className="text-neutral-600 dark:text-neutral-300">{BUILD_DATE_UTC}</span>
+          </div>
           <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
+            className="pointer-events-none flex place-items-center gap-2 lg:pointer-events-auto"
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
